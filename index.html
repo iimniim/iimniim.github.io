@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RA Wedding</title>
+    
+    <link rel="stylesheet" media="screen and (orientation: portrait)" href="css/portrait.css">
+    <link rel="stylesheet" media="screen and (orientation: landscape)" href="css/landscape.css">
+    <style>
+        html body {width: 100%; height: 100%;}
+        body {text-align: center;}
+        div {background-color:  transparent;}
+        @keyframes animasi-keatas {
+            from {top: -330px; opacity: 0;}
+            to {top:0; opacity: 1;}
+        }
+        @keyframes animasi-kebawah{
+          from {bottom: -330px; opacity: 0;}
+          to {bottom: 0; opacity: 1;}
+        }
+        @keyframes animasi-kekiri {
+          from {left: -330px; opacity: 0;}
+          to {left: 0; opacity: 1;}
+        }
+        @keyframes animasi-kekanan {
+          from {right: -330px; opacity: 0;}
+          to {right: 0; opacity: 1;}
+        }
+        @keyframes animasi-muncul {
+          from {opacity: 0;}
+          to {opacity: 1;}
+        }
+        @media (prefers-reduced-motion: no-preference) {
+          .keatas {
+            animation: animasi-keatas 3s 1; position: relative;
+          }
+          .kebawah {
+            animation: animasi-kebawah 3s 1; position: relative;
+          }
+          .kekiri {
+            animation: animasi-kekiri 3s 1; position: relative;
+          }
+          .kekanan {
+            animation: animasi-kekanan 3s 1; position: relative;
+          }
+          .muncul {
+            animation: animasi-muncul 3s 1; position: relative;
+          }
+        }
+      @font-face {
+        font-family: RetroS;
+        src: url('font/RetroSignature.otf');
+      }
+      @font-face {
+        font-family: AltheaBold ;
+        src: url('font/Althea-Bold.ttf');
+      }
+      @font-face {
+        font-family: Althea;
+        src: url('font/Althea-Regular.ttf');
+      }
+      @font-face {
+        font-family: Ayres;
+        src: url('font/Ayres.ttf');
+      }
+      @font-face {
+        font-family: Stymie;
+        src: url('font/StymieStylus.otf');
+      }
+      @font-face {
+        font-family: Euphorigenic;
+        src: url('font/euphorigenic.ttf');
+      }
+      @font-face {
+        font-family: Phosphorus;
+        src: url('font/Phosc___.ttf');
+      }
+      @font-face {
+        font-family: Oranienbaum;
+        src: url('font/Oranienbaum.ttf');
+      }
+      @font-face {
+        font-family: Claudiana;
+        src: url('font/Claudiana\ demo.ttf');
+      }
+      @font-face {
+        font-family: Spring;
+        src: url('font/Spring\ Garden.ttf');
+      }
+      @font-face {
+        font-family: Elegant;
+        src: url('font/Elegant\ DEMO.ttf');
+      }
+     @font-face {
+       font-family: pbolong;
+       src: url('font/Phosh___.ttf');
+     }
+     @font-face {
+       font-family: sigarillos;
+       src: url('font/Sigarillos.ttf');
+     }
+     @font-face {
+       font-family: candle;
+       src: url('font/Candlescript\ Demo\ Version.otf');
+     }
+     @font-face {
+       font-family: chopin;
+       src: url('font/ChopinScript.otf');
+     }
+     .surat {
+       display: grid;
+       grid-template-columns: 1fr 0.4fr 1fr;
+       grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+       grid-template-areas:
+       "suratDepan3 suratDepan3 suratDepan3"
+       "ris3 . ."
+       "ris3 dan3 akb3"
+       ". . akb3" 
+       ". . .";
+       grid-area: surat;
+     }
+    </style>
+</head>
+<body>
+<div style="height: 100%; width: 100%;" id="wrapIsi">
+  <div id="bungkus" class="bungkus">
+    <div class="amplop" id="amplop">
+      <button class="tombolDepan" onclick="bukaAmplop(); hilangAmplop(); bukaMusicPlayer(); randomMusik(); hilangTutupatas()" style="-webkit-backface-visibility: hidden; backface-visibility: hidden; z-index: 1; background-color: #e6cd90; font-family: Althea; border: black solid; position:absolute; bottom: 5%; left:50%; transform: translate(-50%,0) ;  border-radius: 2vw; height: 10%; width: 20%;">Buka undangan</button>
+        <div class="amplopDepan" style="-webkit-backface-visibility: hidden; backface-visibility: hidden;transform-style: preserve-3d;">
+            <a id="r" style="font-family: candle; font-weight:bold">R</a>
+            <a id="dan3" style="font-family: chopin; font-weight:bold">&</a>
+            <a id="a" style="font-family: candle; font-weight:bold" >A</a>
+            
+            <div id="kolomKepada" style="font-family: Althea;">
+                <a style="font-weight: bold;">Kepada :</a> <br><a id="namaUndangan"></a> <br><a id="namaTempat"></a>
+            </div>
+        </div>
+        <div class="amplopBelakang">
+            <div id="surat" class="surat" style="z-index: 1; background-image: url('img/background.jpg'); -webkit-backface-visibility: hidden; backface-visibility: hidden;transform-style: preserve-3d;">
+              <div class="suratDepan3">The Wedding of</div>
+              <div class="akb3">Akbar</div>
+              <div class="ris3">Risma</div>
+              <div class="dan3">&</div>
+            </div>
+            <div id="tutupSuratAtas" class="tutupSuratAtas" style="z-index: 2; transform-style: preserve-3d;" ></div>
+            <div id="tutupSuratKanan" style="z-index: 3; -webkit-backface-visibility: hidden; backface-visibility: hidden;transform-style: preserve-3d;" class="tutupSuratKanan"></div>
+            <div id="tutupSuratKiri" style="z-index: 4; -webkit-backface-visibility: hidden; backface-visibility: hidden;transform-style: preserve-3d;" class="tutupSuratKiri"></div>
+        </div>
+    </div>
+  </div>
+</div>
+<div id="isiSurat" class="isiSurat" style="position: static; display: none; background-image: url('img/background.jpg');">
+    <div style="justify-items: center; height: 100vh; width: 97%; " class="halaman-depan slepetBawahWrap slepetKananWrap slepetKiriWrap slepetAtasWrap slepetMunculWrap">
+        <div class="the-wedding-of slepetBawah"style="font-family: Ayres; font-weight:bold">The wedding of</div>
+        <div class="risma slepetKanan"style="font-family: Candle; font-weight:bold; display: flex; align-items: center; justify-content: center;">Risma</div>
+        <div class="dan slepetMuncul"style="font-family: Candle; font-weight:bold; display: flex; align-items: center; justify-content: center;">&</div>
+        <div class="akbar slepetKiri"style="font-family: Candle; font-weight:bold; display: flex; align-items: center; justify-content: center;">Akbar</div>
+        <div class="tanggal slepetAtas" style="font-family: Ayres; font-weight: bold ; display: flex; align-items: center; justify-content: center;">22 Mei 2021</div>
+        <div class="kosong"></div>
+    </div>
+
+    <div style="align-items: center; justify-items: center; height: 100vh; width: 97%;" class="halaman-doa slepetAtasWrap1">
+        <div style="font-family: RetroS;" class="kalimat-doa slepetAtas">
+            <p>
+                Dan Diantara tanda tanda kekuasaanNya diciptakanNya untukmu pasangan hidup dari jenismu sendiri supaya kamu mendapat ketenangan hati dan dijadikanNya kasih sayang di antara kamu. Sesungguhnya yang demikian itu menjadi tanda tanda kebesaranNya Bagi orang yang berpikir <br>
+                <a style="font-family: Althea; font-style:oblique; font-size: 3vh">(QS. Ar Ruum 21)</a>
+            </p>
+        </div>
+    </div>
+    <div style="align-items: center; justify-items: center; height: 100vh; width: 97%;" class="halaman-perkenalan slepetMunculWrap2 slepetBawahWrap2 slepetKananWrap2 slepetKiriWrap2">
+        <div class="kalimat-pembuka slepetBawah">
+            <p>
+               <br><br><br><a style="font-family:Ayres; font-size: 5.5vh; font-weight: bold;"> Bismillahirrahmanirrahim </a><br>
+               <a style="font-family:Ayres; font-size: 5.5vh; font-weight: bold;"> Assalamu’alaikum Warahmatullahi Wabarakatuh</a> <br><br><br><br><br>
+               <a style="font-family: Oranienbaum; font-size: 3vh;"> Dengan memohon Rahmat & Ridho Allah SWT, kami bermaksud menikahkan anak kami </a>
+            </p>
+        </div>
+          <div class="risma slepetKanan">
+          <div class="risma-alif"style="font-family: candle; font-size: 5vh; font-weight:bold">Risma Alif Fiantika</div>
+          <div class="putri-dari" style="font-family: Oranienbaum; font-size: 2.5vh;font-weight: bold;">Putri dari</div>
+          <div class="bapak-ibu" style="font-family: Oranienbaum; font-size: 2.5vh;">Bapak M. Shonif Sa'dan dan Ibu Waljiati</div>
+          <div class="malang" style="font-family: Oranienbaum; font-size: 2.5vh;">Malang</div>
+        </div>
+        <div class="dan2 slepetMuncul"style="font-family: chopin; font-size: 6vh; font-weight:bold">&</div>
+        <div class="akbar slepetKiri">
+          <div class="zulfikar-akbar"style="font-family: candle; font-size: 5vh; font-weight:bold">Zulfikar Alimuddin Akbar</div>
+          <div class="putra-dari" style="font-family: Oranienbaum; font-size: 2.5vh; font-weight: bold;">Putra dari</div>
+          <div class="bapak-ibu-akbar" style="font-family: Oranienbaum; font-size: 2.5vh;">Bapak Ngalim dan Ibu Siti Zulaikah</div>
+          <div class="trenggalek" style="font-family: Oranienbaum; font-size: 2.5vh;">Trenggalek</div>
+        </div>
+      </div>
+
+      <div style="align-items: center; justify-items: center; height: 100vh; width: 97%;" class="halaman-akad slepetBawahWrap3 slepetMunculWrap3 slepetAtasWrap3">
+        <div class="yang-dilaksanakan slepetAtas" style="display: flex; align-items: center; justify-content: center; ">
+        <p>
+          <a style="font-family: Oranienbaum; font-size: 3vh; "> yang Insyaallah akan dilaksanakan:</a>
+        </p>
+        </div>
+        <div class="waktu-akad slepetMuncul">
+          <div class="judul-akad" style="font-family: Ayres; font-size: 5vh;font-weight: bold;">Akad Nikah</div>
+          <div class="hari-akad"style="font-family: Oranienbaum; font-size: 3vh;">Sabtu</div>
+          <div class="akad-hijriyah"style="font-family: Oranienbaum; font-size: 2.5vh;font-weight: bold;">10 Syawal 1442 (22 Mei 2021)</div>
+          <div class="akad-jam"style="font-family: Oranienbaum; font-size: 2.5vh;">09:00 - 10:00</div>
+          <div class="akad-masjid"style="font-family: Oranienbaum; font-size: 2.5vh;">Masjid Taubaturrahman</div>
+          <div class="akad-alamat"style="font-family: Oranienbaum; font-size: 2.5vh;">JL Teluk Cendrawasih Pandanwangi Blimbing Kota Malang</div>
+          <div class="akad-peta">
+            <div class="akad-google">tombol google</div>
+            <div class="akad-waze">tombol waze</div>
+          </div>
+        </div>
+        <div style="display: grid;" class="waktu-mundur slepetBawah">
+          <div style="width: 100%; height: 100%; margin: auto; border-radius: 1vw 1vw 0 0; font-family:pbolong; font-size: 5vh ;" id="hari" class="hari-mundur">00</div>
+          <div style="width: 100%; height: 100%; margin: auto; border-radius: 1vw 1vw 0 0; font-family:pbolong; font-size: 5vh" id="jam" class="jam-mundur">00</div>
+          <div style="width: 100%; height: 100%; margin: auto; border-radius: 1vw 1vw 0 0; font-family:pbolong; font-size: 5vh" id="menit" class="menit-mundur">00</div>
+          <div style="width: 100%; height: 100%; margin: auto; border-radius: 1vw 1vw 0 0; font-family:pbolong; font-size: 5vh" id="detik" class="detik-mudur">00</div>
+          <div class="waktu-mundurFill1" style="font-family:pbolong; font-size: 5vh">:</div>
+          <div class="waktu-mundurFill2" style="font-family:pbolong; font-size: 5vh">:</div>
+          <div class="waktu-mundurFill3" style="font-family:pbolong; font-size: 5vh">:</div>
+          <div style="font-family: Oranienbaum; font-size: 2.5vh;" class="hari-kata">Hari</div>
+          <div style="font-family: Oranienbaum; font-size: 2.5vh;" class="jam-kata">Jam</div>
+          <div style="font-family: Oranienbaum; font-size: 2.5vh;" class="menit-kata">Menit</div>
+          <div style="font-family: Oranienbaum; font-size: 2.5vh; " class="detik-kata">Detik</div>
+          <div style="font-family: Oranienbaum; font-size: 2.5vh; font-weight: bold" class="save-the-date">Save the Date</div>
+          <div class="kosong-mundur"></div>
+        </div>
+      </div>
+
+<div style="align-items: center; justify-items: center; height: 100vh; width: 97%;" class="halaman-resepsi-ngunduh slepetKananWrap4 slepetKiriWrap4">
+  <div class="waktu-resepsi slepetKiri">
+    <div class="judul-resepsi" style="font-family: Ayres; font-size: 5vh;font-weight: bold;">Resepsi</div>
+    <div class="hari-resepsi"style="font-family: Oranienbaum; font-size: 3vh;">Sabtu</div>
+    <div class="resepsi-hijriyah"style="font-family: Oranienbaum; font-size: 2.5vh;font-weight: bold;">10 Syawal 1442 (22 Mei 2021)</div>
+    <div class="resepsi-jam"style="font-family: Oranienbaum; font-size: 2.5vh;">11:00 - Selesai</div>
+    <div class="lokasi-resepsi"style="font-family: Oranienbaum; font-size: 2.5vh;">Kediaman mempelai wanita</div>
+    <div class="alamat-resepsi"style="font-family: Oranienbaum; font-size: 2.5vh;">JL Teluk Cendrawasih No 77 Pandanwangi Blimbing Kota Malang</div>
+    <div class="peta-resepsi">
+      <div class="resepsi-waze">ini tombol waze</div>
+      <div class="resepsi-google">ini tombol google</div>
+    </div>
+  </div>
+  <div class="waktu-ngunduh slepetKanan">
+    <div class="judul-ngunduh" style="font-family: Ayres; font-size: 5vh;font-weight: bold;">Ngunduh Mantu</div>
+    <div class="hari-ngunduh"style="font-family: Oranienbaum; font-size: 3vh;">Minggu</div>
+    <div class="ngunduh-hijriyah"style="font-family: Oranienbaum; font-size: 2.5vh;font-weight: bold;">18 Syawal 1442 (30 Mei 2021)</div>
+    <div class="ngunduh-jam"style="font-family: Oranienbaum; font-size: 2.5vh;">11:00 - Selesai</div>
+    <div class="ngunduh-lokasi"style="font-family: Oranienbaum; font-size: 2.5vh;">Kediaman mempelai pria</div>
+    <div class="ngunduh-alamat"style="font-family: Oranienbaum; font-size: 2.5vh;">Dsn Pakis RT 003 RW 001 Pakis Durenan Trenggalek</div>
+    <div class="ngunduh-peta">
+      <div class="ngunduh-waze">ini tombol waze</div>
+      <div class="ngunduh-google">ini tombol google</div>
+    </div>
+  </div>
+</div>
+
+<div class="halaman-prokes slepetKananWrap5 slepetKiriWrap5 slepetAtasWrap5 slepetBawahWrap5 slepetMunculWrap5" style="width: 97%; font-family: Oranienbaum;">
+  <div class="judul-prokes slepetMuncul" >
+      <p><a style="font-size: larger; font-weight: bold;">Protokol Kesehatan</a><br>
+        Demi keamanan dan kenyamanan bersama, para hadirin undangan dihimbau untuk memenuhi beberapa peraturan berikut:</p></div>
+  <div class="isi-prokes1 slepetKanan">
+      <div class="konten-prokes">
+          <div class="ikon-prokes"><img class="gambar-prokes" src="img/mask.svg"></div>
+          <div class="tulisan-prokes">Menggunakan Masker</div>
+      </div>
+  </div>
+  <div class="isi-prokes2 slepetAtas">
+      <div class="konten-prokes">
+          <div class="ikon-prokes"><img class="gambar-prokes" src="img/salaman.png"></div>
+          <div class="tulisan-prokes">Hindari Bersentuhan</div>
+      </div>
+  </div>
+  <div class="isi-prokes3 slepetBawah">
+      <div class="konten-prokes">
+          <div class="ikon-prokes"><img class="gambar-prokes" src="img/distance.svg"></div>
+          <div class="tulisan-prokes">Jaga Jarak</div>
+      </div>
+  </div>
+  <div class="isi-prokes4 slepetKiri">
+      <div class="konten-prokes">
+          <div class="ikon-prokes"><img class="gambar-prokes" src="img/hand.svg"></div>
+          <div class="tulisan-prokes">Gunakan Handsanitizer</div>
+      </div>
+  </div>
+</div>
+
+<div style="text-align: center;font-family: Oranienbaum; font-size: 3vh ;font-weight: bolder;">
+    Wedding Gift <br>
+    <button class="tombolDalam" style="background-color: rgb(219, 163, 66); border-radius: 2vw;" onclick="bukaBuwuhan()"style="font-family: Oranienbaum; font-size: 2vh;">Send Gift</button>
+</div>
+
+<div id="bayarBuwuhan" style="display: none; align-items: center; justify-items: center; height: 100vh; width: 97%;" class="buwuh-online">
+  <div class="eWallet">
+    <div class="eWalletWrap">
+        <div class="iconewalletwrap">
+            <div class="iconewallet"><img class="iconImage" src="img/DANA.png"></div>
+            <div class="iconewallet"><img class="iconImage" src="img/GOPAY.png"></div>
+            <div class="iconewallet"><img class="iconImage" src="img/OVO.png"></div>
+        </div>
+        <div style="font-family: Oranienbaum; font-weight: bolder" class="judulBank">A.n. Risma Alif Fiantika</div>
+        <div class="nomorRekening" style="font-family: Oranienbaum">085339014004</div>
+    </div>
+</div>
+<div class="bri">
+    <div class="bankWrap">
+        <div class="iconBank"><img class="iconImage" src="img/BRI.png"></div>
+        <div style="font-family: Oranienbaum; font-weight: bolder" class="judulBank">BRI a.n. Risma Alif Fiantika</div>
+        <div class="nomorRekening">637901002223506</div>
+    </div>
+</div>
+<div class="bni">
+    <div class="bankWrap">
+        <div class="iconBank"><img class="iconImage" src="img/BNI.png"></div>
+        <div style="font-family: Oranienbaum; font-weight: bolder" class="judulBank">BNI a.n. Risma Alif Fiantika</div>
+        <div class="nomorRekening">0351679558</div>
+    </div>
+</div>
+<div class="mandiri">
+    <div class="bankWrap">
+        <div class="iconBank"><img class="iconImage" src="img/MANDIRI.png"></div>
+        <div style="font-family: Oranienbaum; font-weight: bolder" class="judulBank">Mandiri a.n. Zulfikar Alimuddin Akbar</div>
+        <div class="nomorRekening">9000039497574</div>
+    </div>
+</div>
+<div class="jenius">
+    <div class="bankWrap">
+        <div class="iconBank"><img class="iconImage" src="img/JENIUS.png"></div>
+        <div style="font-family: Oranienbaum; font-weight: bolder" class="judulBank">Jenius/BTPN a.n. Risma Alif Fiantika</div>
+        <div class="nomorRekening">$rismeh15/90370119235</div>
+    </div>
+</div>
+  
+</div>
+<div id="musicPlayer" style="position: fixed; bottom: 5%; left: 5%; width: 15%; height: 5%; display: none; box-direction: row; justify-content: space-around;">
+    <button onclick="randomMusik()" style="border-radius: 50%; width:40%">Music</button>
+    <button id="playPause" style="border-radius: 50%; width:25%" onclick="playPause()">Play</button>
+    <audio id="musik" src="mp3/song1.mp3"></audio>
+</div>
+<div style="position: relative;">
+    Designed by <a href="facebook.com/akb18.kun">Zulfikar Alimuddin Akbar</a>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>

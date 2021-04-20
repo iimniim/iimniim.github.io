@@ -1,0 +1,288 @@
+.halaman-depan {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr 1fr 1fr 1fr 1fr 0.5fr 0.5fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      ". . . . ."
+      "the-wedding-of the-wedding-of the-wedding-of the-wedding-of the-wedding-of"
+      "risma risma . . ."
+      "risma risma dan akbar akbar"
+      ". . . akbar akbar"
+      "tanggal tanggal tanggal tanggal tanggal"
+      "kosong kosong kosong kosong kosong"
+      ". . . . .";
+  }
+  
+  .the-wedding-of { grid-area: the-wedding-of; }
+  
+  .risma { grid-area: risma; }
+  
+  .dan { grid-area: dan; }
+  
+  .akbar { grid-area: akbar; }
+  
+  .tanggal { grid-area: tanggal; }
+  
+  .kosong { grid-area: kosong; }
+  
+  .halaman-doa {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1fr 0.5fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "."
+      "kalimat-doa"
+      ".";
+  }
+  
+  .kalimat-doa { grid-area: kalimat-doa; }
+
+  .halaman-perkenalan {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.25fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "kalimat-pembuka"
+      "risma"
+      "akbar";
+  }
+  
+  .kalimat-pembuka { grid-area: kalimat-pembuka; }
+  
+  .risma {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr 1fr 1fr 1.5fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "risma-alif"
+      "putri-dari"
+      "bapak-ibu"
+      "malang";
+    grid-area: risma;
+  }
+  
+  .risma-alif { grid-area: risma-alif; }
+  
+  .putri-dari { grid-area: putri-dari; }
+  
+  .bapak-ibu { grid-area: bapak-ibu; }
+  
+  .malang { grid-area: malang; }
+  
+  .akbar {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr 1fr 1fr 1.5fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "zulfikar-akbar"
+      "putra-dari"
+      "bapak-ibu-akbar"
+      "trenggalek";
+    grid-area: akbar;
+  }
+  
+  .zulfikar-akbar { grid-area: zulfikar-akbar; }
+  
+  .putra-dari { grid-area: putra-dari; }
+  
+  .bapak-ibu-akbar { grid-area: bapak-ibu-akbar; }
+  
+  .trenggalek { grid-area: trenggalek; }
+
+  .halaman-akad {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 2fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "yang-dilaksanakan"
+      "waktu-akad"
+      "waktu-mundur";
+  }
+  
+  .yang-dilaksanakan { grid-area: yang-dilaksanakan; }
+  
+  .waktu-akad {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1.5fr 1fr 0.5fr 1fr 1fr 0.5fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "."
+      "hari-akad"
+      "akad-hijriyah"
+      "akad-masehi"
+      "akad-jam"
+      "akad-masjid"
+      "akad-alamat"
+      "akad-peta";
+    grid-area: waktu-akad;
+  }
+  
+  .hari-akad { grid-area: hari-akad; }
+  
+  .akad-hijriyah { grid-area: akad-hijriyah; }
+  
+  .akad-masehi { grid-area: akad-masehi; }
+  
+  .akad-jam { grid-area: akad-jam; }
+  
+  .akad-masjid { grid-area: akad-masjid; }
+  
+  .akad-alamat { grid-area: akad-alamat; }
+  
+  .akad-peta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "akad-google akad-waze";
+    grid-area: akad-peta;
+  }
+  
+  .akad-google { grid-area: akad-google; }
+  
+  .akad-waze { grid-area: akad-waze; }
+  
+  .waktu-mundur {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr 1fr 1fr 1fr 0.2fr;
+    grid-template-rows: 1fr 1fr 0.5fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "kosong-mundur kosong-mundur kosong-mundur kosong-mundur kosong-mundur kosong-mundur"
+      ". hari-mundur jam-mundur menit-mundur detik-mudur ."
+      ". hari-kata jam-kata menit-kata detik-kata ."
+      ". save-the-date save-the-date save-the-date save-the-date .";
+    grid-area: waktu-mundur;
+  }
+  
+  .hari-mundur { grid-area: hari-mundur; }
+  
+  .jam-mundur { grid-area: jam-mundur; }
+  
+  .menit-mundur { grid-area: menit-mundur; }
+  
+  .detik-mudur { grid-area: detik-mudur; }
+  
+  .hari-kata { grid-area: hari-kata; }
+  
+  .jam-kata { grid-area: jam-kata; }
+  
+  .menit-kata { grid-area: menit-kata; }
+  
+  .detik-kata { grid-area: detik-kata; }
+  
+  .save-the-date { grid-area: save-the-date; }
+  
+  .kosong-mundur { grid-area: kosong-mundur; }
+
+  .halaman-resepsi-ngunduh {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "waktu-resepsi"
+      "waktu-ngunduh";
+  }
+  
+  .waktu-resepsi {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "judul-resepsi"
+      "hari-resepsi"
+      "resepsi-hijriyah"
+      "resepsi-masehi"
+      "resepsi-jam"
+      "lokasi-resepsi"
+      "alamat-resepsi"
+      "peta-resepsi";
+    grid-area: waktu-resepsi;
+  }
+  
+  .judul-resepsi { grid-area: judul-resepsi; }
+  
+  .hari-resepsi { grid-area: hari-resepsi; }
+  
+  .resepsi-hijriyah { grid-area: resepsi-hijriyah; }
+  
+  .resepsi-masehi { grid-area: resepsi-masehi; }
+  
+  .resepsi-jam { grid-area: resepsi-jam; }
+  
+  .lokasi-resepsi { grid-area: lokasi-resepsi; }
+  
+  .alamat-resepsi { grid-area: alamat-resepsi; }
+  
+  .peta-resepsi {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "resepsi-google resepsi-waze";
+    grid-area: peta-resepsi;
+  }
+  
+  .resepsi-waze { grid-area: resepsi-waze; }
+  
+  .resepsi-google { grid-area: resepsi-google; }
+  
+  .waktu-ngunduh {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "judul-ngunduh"
+      "hari-ngunduh"
+      "ngunduh-hijriyah"
+      "ngunduh-masehi"
+      "ngunduh-jam"
+      "ngunduh-lokasi"
+      "ngunduh-alamat"
+      "ngunduh-peta";
+    grid-area: waktu-ngunduh;
+  }
+  
+  .judul-ngunduh { grid-area: judul-ngunduh; }
+  
+  .hari-ngunduh { grid-area: hari-ngunduh; }
+  
+  .ngunduh-hijriyah { grid-area: ngunduh-hijriyah; }
+  
+  .ngunduh-masehi { grid-area: ngunduh-masehi; }
+  
+  .ngunduh-jam { grid-area: ngunduh-jam; }
+  
+  .ngunduh-lokasi { grid-area: ngunduh-lokasi; }
+  
+  .ngunduh-alamat { grid-area: ngunduh-alamat; }
+  
+  .ngunduh-peta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "ngunduh-google ngunduh-waze";
+    grid-area: ngunduh-peta;
+  }
+  
+  .ngunduh-waze { grid-area: ngunduh-waze; }
+  
+  .ngunduh-google { grid-area: ngunduh-google; }
+  
+  
+  
+  

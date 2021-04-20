@@ -1,0 +1,629 @@
+.bungkus {
+  width: 90vw;
+  height: 50vw;
+  position: absolute;
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%,50%);
+  transform-style: preserve-3d;
+}
+.amplop {
+  width: 100%;
+  height: 100%;
+}
+.tombolDepan {
+  font-size: 2vw;
+}
+#amplop {
+  transform-style: preserve-3d;
+  position: relative;
+  transition: all 1s ease;
+}
+.amplopDepan .amplopBelakang {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.amplopBelakang {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #f1d592;
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.amplopDepan {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #f1d592;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+#a {
+  font-size: 6vh;
+  position: absolute;
+  top: 40%;
+  left: 30%;
+}
+#r {
+  font-size: 6vh;
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+#dan3 {
+  font-size: 4vh;
+  position: absolute;
+  top: 35%;
+  left: 25%;
+}
+#kolomKepada {
+  width: 40%;
+  height: 25%;
+  position: absolute;
+  bottom: 20%;
+  right: 10%;
+  border: solid black;
+  border-radius: 5%;
+  font-size: 2vh;
+}
+.tutupSuratKiri {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  border-top: 25vw solid transparent;
+  border-right: 45vw solid transparent;
+  border-bottom: 25vw solid #e6cd90;
+  border-left: 45vw solid #e6cd90;
+}
+.tutupSuratKanan {
+  content: "";
+  top: 0;
+  right: 0;
+  position: absolute;
+  border-top: 25vw solid transparent;
+  border-right: 45vw solid #dac48e;
+  border-bottom: 25vw solid #dac48e;
+  border-left: 45vw solid transparent;
+}
+.tutupSuratAtas {
+  content: "";
+  top: 0;
+  right: 0;
+  position: absolute;
+  border-top: 25vw solid #f1d592;
+  border-right: 45vw solid transparent;
+  border-bottom: 25vw solid transparent;
+  border-left: 45vw solid transparent;
+
+}
+#tutupSuratAtas {
+  transform-origin: top;
+  transform: rotateX(0deg);
+  transition: all 1s 1s ease;
+}
+.surat {
+  position: absolute;
+  border-radius: 3vw;
+  height: 50vw;
+  width: 80vw;
+  top: 0;
+  left: 5vw;
+  font-size: 5vh;
+  
+}
+
+.suratDepan3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Ayres; font-weight:bold;
+  grid-area: suratDepan3;
+}
+.akb3 {
+ font-family: Candle; font-weight:bold;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+  grid-area: akb3;
+}
+.ris3 {
+  grid-area: ris3;
+  font-family: Candle; font-weight:bold;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+.dan3 {
+  grid-area: dan3;
+  font-family: Candle; font-weight:bold;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+} 
+#surat {
+  transition:top 1s 2s ease, z-index 0.3s 2s ease;
+}
+#bungkus {
+  transition: all 1s 3s ;
+}
+.isiSurat {
+  height: 100%;
+  width: 100%;
+  display: none;
+}
+#isiSurat {
+  transition: all 1s 4s ease;
+}
+
+
+
+
+.halaman-depan {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 0.5fr 1fr 1fr 1fr 1fr 0.5fr 0.5fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      ". . . . ."
+      "the-wedding-of the-wedding-of the-wedding-of the-wedding-of the-wedding-of"
+      "risma risma . . ."
+      "risma risma dan akbar akbar"
+      ". . . akbar akbar"
+      "tanggal tanggal tanggal tanggal tanggal"
+      "kosong kosong kosong kosong kosong"
+      ". . . . .";
+  }
+  
+  .the-wedding-of { grid-area: the-wedding-of;
+    font-size: 6vh; }
+  
+  .risma { grid-area: risma;
+    font-size: 8vh }
+  
+  .dan { grid-area: dan;
+    font-size: 5vh;  }
+  
+  .akbar { grid-area: akbar; 
+    font-size: 8vh;}
+  
+  .tanggal { grid-area: tanggal; 
+    font-size: 5vh;}
+  
+  .kosong { grid-area: kosong; }
+  
+  .halaman-doa {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1fr 0.5fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "."
+      "kalimat-doa"
+      ".";
+  }
+  
+  .kalimat-doa { 
+    font-size: 6vh;
+    grid-area: kalimat-doa; }
+
+  .halaman-perkenalan {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 0.15fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "kalimat-pembuka"
+      "risma"
+      "dan2"
+      "akbar";
+  }
+  
+  .kalimat-pembuka { grid-area: kalimat-pembuka; }
+  
+  .risma {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr 1fr 1.5fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "risma-alif"
+      "putri-dari"
+      "bapak-ibu"
+      "malang";
+    grid-area: risma;
+  }
+  
+  .risma-alif { grid-area: risma-alif; }
+  
+  .putri-dari { grid-area: putri-dari; }
+  
+  .bapak-ibu { grid-area: bapak-ibu; }
+  
+  .malang { grid-area: malang; }
+
+  .dan2 {grid-area: dan2;}
+  
+  .akbar {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr 1fr 1.5fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "zulfikar-akbar"
+      "putra-dari"
+      "bapak-ibu-akbar"
+      "trenggalek";
+    grid-area: akbar;
+  }
+  
+  .zulfikar-akbar { grid-area: zulfikar-akbar; }
+  
+  .putra-dari { grid-area: putra-dari; }
+  
+  .bapak-ibu-akbar { grid-area: bapak-ibu-akbar; }
+  
+  .trenggalek { grid-area: trenggalek; }
+
+  .halaman-akad {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 0.25fr 3fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "."
+      "yang-dilaksanakan"
+      "waktu-akad"
+      "waktu-mundur";
+  }
+  
+  .yang-dilaksanakan { grid-area: yang-dilaksanakan; }
+  
+  .waktu-akad {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "judul-akad"
+      "hari-akad"
+      "akad-hijriyah"
+      "akad-jam"
+      "akad-masjid"
+      "akad-alamat"
+      "akad-peta";
+    grid-area: waktu-akad;
+  }
+  
+  .judul-akad {grid-area: judul-akad;}
+
+  .hari-akad { grid-area: hari-akad; }
+  
+  .akad-hijriyah { grid-area: akad-hijriyah; }
+  
+  .akad-jam { grid-area: akad-jam; }
+  
+  .akad-masjid { grid-area: akad-masjid; }
+  
+  .akad-alamat { grid-area: akad-alamat; }
+  
+  .akad-peta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "akad-google akad-waze";
+    grid-area: akad-peta;
+  }
+  
+  .akad-google { grid-area: akad-google; }
+  
+  .akad-waze { grid-area: akad-waze; }
+  
+  .waktu-mundur {
+    display: grid;
+    grid-template-columns: 0.2fr 1fr 0.1fr 1fr 0.1fr 1fr 0.1fr 1fr 0.2fr;
+    grid-template-rows: 1fr 1fr 0.5fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+    "kosong-mundur kosong-mundur kosong-mundur kosong-mundur kosong-mundur kosong-mundur kosong-mundur kosong-mundur kosong-mundur"
+    ". hari-mundur waktu-mundurFill1 jam-mundur waktu-mundurFill2 menit-mundur waktu-mundurFill3 detik-mudur ."
+      ". hari-kata . jam-kata . menit-kata . detik-kata ."
+      ". save-the-date save-the-date save-the-date save-the-date save-the-date save-the-date save-the-date .";
+    grid-area: waktu-mundur;
+  }
+  .waktu-mundurFill1{
+    grid-area: waktu-mundurFill1;
+  }
+  .waktu-mundurFill2{
+    grid-area: waktu-mundurFill2;
+  }
+  .waktu-mundurFill3{
+    grid-area: waktu-mundurFill3;
+  }
+  
+  .hari-mundur { grid-area: hari-mundur; }
+  
+  .jam-mundur { grid-area: jam-mundur; }
+  
+  .menit-mundur { grid-area: menit-mundur; }
+  
+  .detik-mudur { grid-area: detik-mudur; }
+  
+  .hari-kata { grid-area: hari-kata; }
+  
+  .jam-kata { grid-area: jam-kata; }
+  
+  .menit-kata { grid-area: menit-kata; }
+  
+  .detik-kata { grid-area: detik-kata; }
+  
+  .save-the-date { grid-area: save-the-date; }
+  
+  .kosong-mundur { grid-area: kosong-mundur; }
+
+  .halaman-resepsi-ngunduh {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "waktu-resepsi"
+      "waktu-ngunduh";
+  }
+  
+  .waktu-resepsi {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "judul-resepsi"
+      "hari-resepsi"
+      "resepsi-hijriyah"
+      "resepsi-jam"
+      "lokasi-resepsi"
+      "alamat-resepsi"
+      "peta-resepsi";
+    grid-area: waktu-resepsi;
+  }
+  
+  .judul-resepsi { grid-area: judul-resepsi; }
+  
+  .hari-resepsi { grid-area: hari-resepsi; }
+  
+  .resepsi-hijriyah { grid-area: resepsi-hijriyah; }
+  
+  .resepsi-jam { grid-area: resepsi-jam; }
+  
+  .lokasi-resepsi { grid-area: lokasi-resepsi; }
+  
+  .alamat-resepsi { grid-area: alamat-resepsi; }
+  
+  .peta-resepsi {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "resepsi-google resepsi-waze";
+    grid-area: peta-resepsi;
+  }
+  
+  .resepsi-waze { grid-area: resepsi-waze; }
+  
+  .resepsi-google { grid-area: resepsi-google; }
+  
+  .waktu-ngunduh {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "judul-ngunduh"
+      "hari-ngunduh"
+      "ngunduh-hijriyah"
+      "ngunduh-jam"
+      "ngunduh-lokasi"
+      "ngunduh-alamat"
+      "ngunduh-peta";
+    grid-area: waktu-ngunduh;
+  }
+  
+  .judul-ngunduh { grid-area: judul-ngunduh; }
+  
+  .hari-ngunduh { grid-area: hari-ngunduh; }
+  
+  .ngunduh-hijriyah { grid-area: ngunduh-hijriyah; }
+  
+  .ngunduh-jam { grid-area: ngunduh-jam; }
+  
+  .ngunduh-lokasi { grid-area: ngunduh-lokasi; }
+  
+  .ngunduh-alamat { grid-area: ngunduh-alamat; }
+  
+  .ngunduh-peta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "ngunduh-google ngunduh-waze";
+    grid-area: ngunduh-peta;
+  }
+  
+  .ngunduh-waze { grid-area: ngunduh-waze; }
+  
+  .ngunduh-google { grid-area: ngunduh-google; }
+
+  .tombolDalam {
+    width: 20vw; height: 5vw;
+  }
+  
+  .buwuh-online {
+    width: 100%;
+    height: 100%;
+    display: none;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0 0;
+    grid-template-areas: 
+    "ewallet"
+    "bri"
+    "bni"
+    "mandiri"
+    "jenius";
+    grid-area: buwuh-online;
+    justify-items: center;
+    align-items: center;
+    }
+.eWallet {
+    grid-area: ewallet;
+}
+.bri {
+    grid-area: bri;
+}
+.bni {
+    grid-area: bni;
+}
+.mandiri {
+    grid-area: mandiri;
+}
+.jenius {
+    grid-area: jenius;
+}
+.bankWrap {
+    width: 98vw;
+    height: 20vw;
+    position: relative;
+}
+.judulBank{
+    width: 75vw;
+    height: 10vw;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    font-size: 3vh;
+}
+.nomorRekening{
+    width: 75vw;
+    height: 10vw;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    font-size: 3vh;
+}
+.iconBank{
+    width: 20vw;
+    height: 20vw;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.eWalletWrap {
+    width: 98vw;
+    height: 20vw;
+    position: relative;
+}
+.iconewalletwrap {
+    width: 20vw;
+    height: 20vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap-reverse;
+}
+.iconewallet {
+    width: 8vw;
+    height: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.iconImage {
+    max-width: 100%;
+    max-height: 100%;
+}
+  
+.halaman-prokes {
+  width: 97%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas: 
+  "judul-prokes"
+  "prokes1"
+  "prokes2"
+  "prokes3"
+  "prokes4";
+  justify-items: center;
+  align-items: center;
+  grid-area: halaman-prokes;
+  font-size: 2vh;
+}
+.judul-prokes {
+  grid-area: judul-prokes;
+  text-align: center;
+  width: 90vw;
+}
+.isi-prokes1 {
+  grid-area: prokes1;
+}
+.isi-prokes2 {
+  grid-area: prokes2;
+}
+.isi-prokes3 {
+  grid-area: prokes3;
+}
+.isi-prokes4 {
+  grid-area: prokes4;
+}
+.konten-prokes {
+  height: 20vh;
+  width: 90vw;
+  position: relative;
+}
+.ikon-prokes {
+  height: 13vh;
+  width: 13vh;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tulisan-prokes {
+  width: 90vw;
+  height: 7vh;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gambar-prokes {
+  max-height: 100%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
